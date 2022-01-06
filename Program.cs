@@ -53,16 +53,15 @@ namespace Lab_19_LINQ
 
             Console.WriteLine("Введите компьютеры с указанным процессором");
             string processor = Console.ReadLine();
-            List<PC> pc1 = pc.Where(x => x.Processor == processor).ToList(); //синтаксис на основе методов расширения
-                                                                             //NamePC c большой буквы свойство, namePC переменная
-                                                                             //=> лямбда выражение. Для всех x внутри списка
-                                                                             //вызываем метод ToList, т.к. where возвращает коллекцию
+            List<PC> pc1 = pc.Where(x => x.Processor == processor).ToList(); 
             Print(pc1);
 
             Console.WriteLine("Показать объем ОЗУ не ниже, чем указано");
             int ram = Convert.ToInt32(Console.ReadLine());
             List<PC> pc2 = pc.Where(x => x.RAM >= ram).ToList();
             Print(pc2);
+           
+            
 
             Console.WriteLine("Вывести отсортированный по цене список");
             List<PC> pc3 = pc.OrderBy(x => x.Price).ToList();
